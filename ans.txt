@@ -1,0 +1,180 @@
+''' Q.1- Create a circle class and initialize it with radius. Make two 
+methods getArea and getCircumference inside this class. '''
+
+class Circle:
+        '''class to get area and circumference of a circle using the 
+radius'''
+
+        def __init__(self,r):
+            self.radius=r
+
+        def getArea(self):
+            '''method to get area of the circle'''
+            return 3.14*((self.radius)**2)
+
+        def getCircumference(self):
+            '''method to get circumference of the circle'''
+            return 2*3.14*self.radius
+
+r=float(input("Enter radius of circle: "))
+c=Circle(r)
+print("Radius={} Area={} 
+Circumference={}".format(c.radius,c.getArea(),c.getCircumference()))
+
+
+''' Q.2- Create a Student class and initialize it with name and roll 
+number. Make methods to :
+1. Display - It should display all informations of the student.
+2. setAge - It should assign age to student
+3. setMarks - It should assign marks to the student. '''
+
+class Student:
+        ''' class to set and display the student information '''
+
+        def __init__(self):
+            self.name='student'
+            self.rno=0
+
+        def display(self):
+            '''method to display student information'''
+            print("Name: {}, RollNo: {}, Age: {}, Marks: {}".\
+            format(self.name,self.rno,self.age,self.marks))
+
+        def setAge(self,age):
+            '''setter method to set age of student'''
+            self.age=age
+
+        def setMarks(self,marks):
+            '''setter method to set marks of student'''
+            self.marks=marks
+s1=Student()
+s1.setAge(21)
+s1.setMarks(75)
+s1.display()
+
+
+
+
+''' Q.3- Create a Temperature class. Make two methods :
+1. convertFahrenheit - It will take celsius and will print it into 
+Fahrenheit.
+2. convertCelsius - It will take Fahrenheit and will convert it into 
+Celsius. '''
+
+class Temperature:
+    ''' class to convert temberatures between fahrenheit and celcius '''
+        
+
+    def convertFahrenheit(self,celcius):
+        '''method to convert celcius into fahrenheit'''
+        return (((9/5)*(celcius))+32)
+
+    def convertCelsius(self,fahrenheit):
+        '''method to convert fahrenheit to celsius'''
+        return ((fahrenheit-32)*(5/9))
+
+t1=Temperature()
+c=float(input("Enter temperatur in Celcius"))
+f=t1.convertFahrenheit(c)
+print("Temperature in Fahrenheit=",f)
+f1=float(input("Enter temperatur in Fahrenheit"))
+c1=t1.convertCelsius()
+print("Temperature in Celcius=",c)
+
+
+
+''' Q.4- Create a class MovieDetails and initialize it with movie name, 
+artistname,Year of release and ratings .
+Make methods to
+1. Display-Display the details.
+2. Add- Add the movie details. '''
+
+class MovieDetails:
+    '''class for displaying and adding movie details'''
+
+    def __init__(self):
+        self.moviename='movie'
+        self.artist='artist'
+        self.year=0
+        self.ratings=0.0
+
+    def Display(self):
+        '''method to display the movie details'''
+        print("Movie: {}\nFeaturing Artist: {}\nRelease 
+Year:{}\nRatings: 
+{}\n\n".format(self.moviename,self.artist,self.year,self.ratings))
+
+    def Add(self,moviename,artist,year,ratings):
+        '''method to add movie details'''
+        self.moviename=moviename
+        self.artist=artist
+        self.year=year
+        self.ratings=ratings
+
+m2=MovieDetails()
+m2.Add('ABC','XYZ',2018,4)
+m2.Display()
+
+
+
+
+'''Q.5- Create a class Expenditure and initialize it with 
+salary,savings, category , total expenditure.Make the following methods.
+1. Add expenditure according to category .
+2. Calculate total expenditure.
+3. Calculate per day and monthly expenditure.
+'''
+
+class Expenditure:
+    ''' class to add and calculate expenditure'''
+
+    def __init__(self):
+        self.salary=100000.0
+        self.savings=50000.0
+        self.category='f'
+        self.totalexp=50000.0
+
+    def AddExpenditure(self,category):
+        '''method to add expenditure according to category'''
+        if category=='f':
+            self.category=category
+            self.expenditure=50000.0
+        elif category=='m':
+            self.category=category
+            self.expenditure=18000.0
+
+    def CalcTotalExp(self):
+        '''method to calculate total expenditure'''
+        self.totalexp+=self.expenditure
+
+    def CalcPerDayAndMonthlyExp(self):
+        ''''method to calculate per day and monthly expenditure'''
+        self.perDayExp=self.totalexp/365
+        self.monthlyExp=self.totalexp/12
+
+
+    def Display(self):
+        '''method to display expenditure information'''
+        print("Salary",self.salary,"\n")
+        print("Savings",self.savings,"\n")
+        print("Category",self.category,"\n")
+        print("Expenditure",self.expenditure,"\n")
+        print("Total Expenditure",self.totalexp,"\n")
+        print("Per Month Expenditur",self.monthlyExp,"\n")
+        print("Daily Expenditure",self.perDayExp,"\n")
+
+
+ch='y'
+while ch=='y':
+    category=input("Enter category: ")
+    e1=Expenditure()
+    e1.AddExpenditure(category)
+    e1.CalcTotalExp()
+    e1.CalcPerDayAndMonthlyExp()
+    e1.Display()
+
+   
+print("End")
+
+    
+
